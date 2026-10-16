@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.8)
+project(custom_kuka_description)
+find_package(ament_cmake REQUIRED)
+install(DIRECTORY urdf launch config worlds rviz scripts data DESTINATION share/${PROJECT_NAME})
+ament_package()

@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<robot name="custom_kuka_kr6">
+
+  <link name="base_link">
+    <visual><geometry><cylinder length="0.150" radius="0.090"/></geometry></visual>
+  </link>
+
+  <joint name="joint_1" type="revolute">
+    <parent link="base_link"/>
+    <child link="link_1"/>
+    <origin xyz="0.0000 0.0000 0.1500" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.1416" upper="3.1416" effort="100" velocity="3.0"/>
+  </joint>
+
+  <link name="link_1">
+    <visual>
+      <origin xyz="0.0000 0 -0.0750" rpy="0 0 0"/>
+      <geometry><cylinder length="0.1500" radius="0.0700"/></geometry>
+    </visual>
+  </link>
+
+  <joint name="joint_2" type="revolute">
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <origin xyz="0.0000 0.0000 0.2500" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.1416" upper="3.1416" effort="100" velocity="3.0"/>
+  </joint>
+
+  <link name="link_2">
+    <visual>
+      <origin xyz="0.0000 0 -0.1250" rpy="0 0 0"/>
+      <geometry><cylinder length="0.2500" radius="0.0600"/></geometry>
+    </visual>
+  </link>
+
+  <joint name="joint_3" type="revolute">
+    <parent link="link_2"/>
+    <child link="link_3"/>
+    <origin xyz="0.0000 0.0000 0.4000" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.1416" upper="3.1416" effort="100" velocity="3.0"/>
+  </joint>
+
+  <link name="link_3">
+    <visual>
+      <origin xyz="0.0000 0 -0.2000" rpy="0 0 0"/>
+      <geometry><cylinder length="0.4000" radius="0.0500"/></geometry>
+    </visual>
+  </link>
+
+  <joint name="joint_4" type="revolute">
+    <parent link="link_3"/>
+    <child link="link_4"/>
+    <origin xyz="0.3500 0.0000 0.0000" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.1416" upper="3.1416" effort="100" velocity="3.0"/>
+  </joint>
+
+  <link name="link_4">
+    <visual>
+      <origin xyz="-0.1750 0 0.0000" rpy="0 1.5708 0"/>
+      <geometry><cylinder length="0.3500" radius="0.0400"/></geometry>
+    </visual>
+  </link>
+
+  <joint name="joint_5" type="revolute">
+    <parent link="link_4"/>
+    <child link="link_5"/>
+    <origin xyz="0.1500 0.0000 0.0000" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.1416" upper="3.1416" effort="100" velocity="3.0"/>
+  </joint>
+
+  <link name="link_5">
+    <visual>
+      <origin xyz="-0.0750 0 0.0000" rpy="0 1.5708 0"/>
+      <geometry><cylinder length="0.1500" radius="0.0300"/></geometry>
+    </visual>
+  </link>
+
+  <joint name="joint_6" type="revolute">
+    <parent link="link_5"/>
+    <child link="link_6"/>
+    <origin xyz="0.1000 0.0000 0.0000" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.1416" upper="3.1416" effort="100" velocity="3.0"/>
+  </joint>
+
+  <link name="link_6">
+    <visual>
+      <origin xyz="-0.0500 0 0.0000" rpy="0 1.5708 0"/>
+      <geometry><cylinder length="0.1000" radius="0.0200"/></geometry>
+    </visual>
+  </link>
+
+</robot>

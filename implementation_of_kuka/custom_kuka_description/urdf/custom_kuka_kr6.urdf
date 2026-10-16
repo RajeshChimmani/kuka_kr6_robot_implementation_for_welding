@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<robot name="custom_kuka_kr6">
+  <link name="world"/>
+  <joint name="world_fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="base_link">
+    <inertial>
+      <mass value="12.0000"/>
+      <origin xyz="0.00000 0.00000 0.07500" rpy="0 0 0"/>
+      <inertia ixx="0.0468" ixy="0" ixz="0" iyy="0.0468" iyz="0" izz="0.0486"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.00000 0.00000 0.07500" rpy="0.00000 0.00000 0.00000"/>
+      <geometry><cylinder radius="0.0900" length="0.1500"/></geometry>
+      <material name="mat_base_link"><color rgba="0.2 0.2 0.2 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.00000 0.00000 0.07500" rpy="0.00000 0.00000 0.00000"/>
+      <geometry><cylinder radius="0.0900" length="0.1500"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_1" type="revolute">
+    <parent link="base_link"/>
+    <child link="link_1"/>
+    <origin xyz="0.00000 0.00000 0.15000" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.96706" upper="2.96706" effort="200" velocity="3.49066"/>
+    <dynamics damping="1.0" friction="0.05"/>
+  </joint>
+
+  <link name="link_1">
+    <inertial>
+      <mass value="3.6368"/>
+      <origin xyz="0.00000 0.00000 0.12500" rpy="0 0 0"/>
+      <inertia ixx="0.0233967" ixy="0" ixz="0" iyy="0.0233967" iyz="0" izz="0.00891013"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.00000 0.00000 0.12500" rpy="0.00000 0.00000 0.00000"/>
+      <geometry><cylinder radius="0.0700" length="0.2500"/></geometry>
+      <material name="mat_link_1"><color rgba="1 0.42 0.05 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.00000 0.00000 0.12500" rpy="0.00000 0.00000 0.00000"/>
+      <geometry><cylinder radius="0.0700" length="0.2500"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_2" type="revolute">
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <origin xyz="0.00000 0.00000 0.25000" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.74533" upper="1.74533" effort="200" velocity="3.49066"/>
+    <dynamics damping="1.0" friction="0.05"/>
+  </joint>
+
+  <link name="link_2">
+    <inertial>
+      <mass value="4.2751"/>
+      <origin xyz="0.00000 0.00000 0.20000" rpy="0 0 0"/>
+      <inertia ixx="0.0608486" ixy="0" ixz="0" iyy="0.0608486" iyz="0" izz="0.00769514"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.00000 0.00000 0.20000" rpy="0.00000 0.00000 0.00000"/>
+      <geometry><cylinder radius="0.0600" length="0.4000"/></geometry>
+      <material name="mat_link_2"><color rgba="1 0.42 0.05 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.00000 0.00000 0.20000" rpy="0.00000 0.00000 0.00000"/>
+      <geometry><cylinder radius="0.0600" length="0.4000"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_3" type="revolute">
+    <parent link="link_2"/>
+    <child link="link_3"/>
+    <origin xyz="0.00000 0.00000 0.40000" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.09440" upper="2.61799" effort="120" velocity="3.49066"/>
+    <dynamics damping="1.0" friction="0.05"/>
+  </joint>
+
+  <link name="link_3">
+    <inertial>
+      <mass value="2.5977"/>
+      <origin xyz="0.17500 0.00000 0.00000" rpy="0 0 0"/>
+      <inertia ixx="0.00324713" ixy="0" ixz="0" iyy="0.0281418" iyz="0" izz="0.0281418"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.17500 0.00000 0.00000" rpy="0.00000 1.57080 0.00000"/>
+      <geometry><cylinder radius="0.0500" length="0.3500"/></geometry>
+      <material name="mat_link_3"><color rgba="1 0.42 0.05 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.17500 0.00000 0.00000" rpy="0.00000 1.57080 0.00000"/>
+      <geometry><cylinder radius="0.0500" length="0.3500"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_4" type="revolute">
+    <parent link="link_3"/>
+    <child link="link_4"/>
+    <origin xyz="0.35000 0.00000 0.00000" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.22886" upper="3.22886" effort="40" velocity="5.23599"/>
+    <dynamics damping="1.0" friction="0.05"/>
+  </joint>
+
+  <link name="link_4">
+    <inertial>
+      <mass value="0.7125"/>
+      <origin xyz="0.07500 0.00000 0.00000" rpy="0 0 0"/>
+      <inertia ixx="0.000570011" ixy="0" ixz="0" iyy="0.00162097" iyz="0" izz="0.00162097"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.07500 0.00000 0.00000" rpy="0.00000 1.57080 0.00000"/>
+      <geometry><cylinder radius="0.0400" length="0.1500"/></geometry>
+      <material name="mat_link_4"><color rgba="1 0.42 0.05 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.07500 0.00000 0.00000" rpy="0.00000 1.57080 0.00000"/>
+      <geometry><cylinder radius="0.0400" length="0.1500"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_5" type="revolute">
+    <parent link="link_4"/>
+    <child link="link_5"/>
+    <origin xyz="0.15000 0.00000 0.00000" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.09440" upper="2.09440" effort="30" velocity="5.23599"/>
+    <dynamics damping="1.0" friction="0.05"/>
+  </joint>
+
+  <link name="link_5">
+    <inertial>
+      <mass value="0.3000"/>
+      <origin xyz="0.05000 0.00000 0.00000" rpy="0 0 0"/>
+      <inertia ixx="0.000135" ixy="0" ixz="0" iyy="0.0003175" iyz="0" izz="0.0003175"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.05000 0.00000 0.00000" rpy="0.00000 1.57080 0.00000"/>
+      <geometry><cylinder radius="0.0300" length="0.1000"/></geometry>
+      <material name="mat_link_5"><color rgba="0.3 0.3 0.32 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.05000 0.00000 0.00000" rpy="0.00000 1.57080 0.00000"/>
+      <geometry><cylinder radius="0.0300" length="0.1000"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_6" type="revolute">
+    <parent link="link_5"/>
+    <child link="link_6"/>
+    <origin xyz="0.10000 0.00000 0.00000" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-6.10865" upper="6.10865" effort="20" velocity="6.98132"/>
+    <dynamics damping="1.0" friction="0.05"/>
+  </joint>
+
+  <link name="link_6">
+    <inertial>
+      <mass value="0.3000"/>
+      <origin xyz="0.02500 0.00000 0.00000" rpy="0 0 0"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.02500 0.00000 0.00000" rpy="0.00000 1.57080 0.00000"/>
+      <geometry><cylinder radius="0.0200" length="0.0500"/></geometry>
+      <material name="mat_link_6"><color rgba="0.3 0.3 0.32 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.02500 0.00000 0.00000" rpy="0.00000 1.57080 0.00000"/>
+      <geometry><cylinder radius="0.0200" length="0.0500"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="torch_joint" type="fixed">
+    <parent link="link_6"/>
+    <child link="torch"/>
+    <origin xyz="0.05000 0.00000 0.00000" rpy="0 0 0"/>
+  </joint>
+
+  <link name="torch">
+    <inertial>
+      <mass value="1.0000"/>
+      <origin xyz="0.06000 0.00000 0.00000" rpy="0 0 0"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.001236" iyz="0" izz="0.001236"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.06000 0.00000 0.00000" rpy="0.00000 1.57080 0.00000"/>
+      <geometry><cylinder radius="0.0120" length="0.1200"/></geometry>
+      <material name="mat_torch"><color rgba="0.72 0.45 0.2 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.06000 0.00000 0.00000" rpy="0.00000 1.57080 0.00000"/>
+      <geometry><cylinder radius="0.0120" length="0.1200"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="tcp_joint" type="fixed">
+    <parent link="torch"/>
+    <child link="tcp"/>
+    <origin xyz="0.12000 0.00000 0.00000" rpy="0 0 0"/>
+  </joint>
+
+  <link name="tcp"/>
+
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware><plugin>gz_ros2_control/GazeboSimSystem</plugin></hardware>
+    <joint name="joint_1">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0.00000</param></state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="joint_2">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0.00000</param></state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="joint_3">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0.00000</param></state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="joint_4">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0.00000</param></state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="joint_5">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">1.57080</param></state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="joint_6">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0.00000</param></state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>/home/rajesh/implementation_of_kuka/custom_kuka_description/config/ros2_controllers.yaml</parameters>
+    </plugin>
+  </gazebo>
+</robot>
